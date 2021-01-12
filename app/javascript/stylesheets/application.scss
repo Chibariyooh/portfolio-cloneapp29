@@ -1,0 +1,103 @@
+@import "~bootstrap/scss/bootstrap";
+@import "question";
+
+/* 全体 */
+h1 {
+  padding: 20px 0px 10px 0px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h3 {
+  padding: 20px 0px 10px 0px;
+  font-size: 1rem;
+}
+
+body {
+  padding-top: 56px;
+}
+
+.mw-1200 {
+  max-width: 1200px;
+}
+
+.base-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* アラート */
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+#container {
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.style-sign-in1 {
+  width: 100%;
+  text-align: center;
+  background-color: #17a2b8;
+  padding: 0.4rem 0;
+  border-radius: 0.25rem;
+}
+
+.style-sign-in1 a {
+  color: white;
+  width: 100%;
+  text-align: center;
+  background-color: #17a2b8;
+  padding: 0.4rem 0;
+  border-radius: 0.25rem;
+}
+
+.style-sign-up1 {
+  width: 100%;
+  text-align: center;
+  background-color: #28a745;
+  padding: 0.4rem 0;
+  border-radius: 0.25rem;
+}
+
+.style-sign-up1 a {
+  color: white;
+}
+
+.card-body {
+  height: 200px;
+  width: 180px;
+}
+
+.embed-responsive-16by9::before {
+  padding-top: 10%;
+}
+
+#movie-part {
+  .embed-responsive-16by9::before {
+    padding-top: 60%;
+  }
+}
+
+
+td a:hover {
+  cursor: pointer;
+  color: #34569e !important;
+}
+
+/* 検索ボックス */
+#search-box {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+/*navbar見た目調整*/
+.navbar {
+  padding-left: 3rem;
+}

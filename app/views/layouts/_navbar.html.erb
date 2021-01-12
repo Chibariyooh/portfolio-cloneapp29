@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-xl fixed-top navbar-dark <%= controller_name == 'line_texts' ? 'bg-success' : 'bg-primary' %>">
+  <a class="navbar-brand" href="#">やんばるCODE</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Rails
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "Ruby/Rails教材", text_books_path, class: "dropdown-item" %>
+          <%= link_to "動画教材", movies_path, class: "dropdown-item" %>
+          <%= link_to "AWS講座", aws_texts_path, class: "dropdown-item" %>
+          <%= link_to "ライブコーディング", movies_path(genre: "Live"), class: "dropdown-item" %>
+          <%= link_to "質問集", questions_path, class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PHP
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "PHPテキスト教材", text_books_path(genre: "Php"), class: "dropdown-item" %>
+          <%= link_to "PHP動画教材", movies_path(genre: "Php"), class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "対談", movies_path(genre: "Talk"), class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "情報発信", movies_path(genre: "Marketing"), class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "動画編集講座", movies_path(genre: "Movie"), class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "ライティング講座", movies_path(genre: "Writing"), class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "マネタイズ講座", movies_path(genre: "Money") , class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Line@", line_texts_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link", method: :delete %>
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
